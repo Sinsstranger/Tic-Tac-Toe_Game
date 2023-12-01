@@ -24,7 +24,6 @@ export default class Game implements IGame {
 		);
 		this.status = new GameStatus(playerSym);
 		this.aiPlayer = new GameAI(this.gameBoard, this);
-		// this.firstMoveInRound = this.firstMoveInRound.bind(this);
 		this.firstMoveInRound();
 	}
 
@@ -50,16 +49,6 @@ export default class Game implements IGame {
 		this.gameBoard.cellsInLine = this.cellsInLine;
 		this.gameBoard.cells = this.gameBoard.genCells(size);
 		this.gameBoard.render();
-		/**
-		 * Вопрос: - если поменять gameboard на новый, как в коде ниже, то где-то
-		 * все равно остается ссылка на старый gameboard, не понял почему так и его не удаляет сборщик мусора
-		 * как отлавливать такие проблемы?
-		 */
-		// this.gameBoard = new GameBoard(
-		// 	this.containerElement,
-		// 	size,
-		// 	this,
-		// );
 	}
 	public setStatistics() {
 		const PLAYER_SELECTOR = '[data-player="player"] > .statistics__value';
