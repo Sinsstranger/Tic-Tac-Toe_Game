@@ -188,7 +188,7 @@ export default class GameBoard implements IGameBoard {
 	}
 
 	public render(): void {
-		this.board.classList.add("game-board");
+		this.board.classList.value = 'game-board';
 		this.board.innerHTML = '';
 		if (this.cellsInLine !== 3) {
 			this.board.classList.add(`game-board-${this.cellsInLine}`);
